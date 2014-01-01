@@ -1,10 +1,8 @@
 Enrichmentmatch::Application.routes.draw do
   devise_for :users
 
-  get "welcome/index"
-
-  get "welcome/about"
-  root to: 'welcome#index'
+  resources :subject
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -56,6 +54,7 @@ Enrichmentmatch::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+    root to: 'pages#new'
 
   # See how all your routes lay out with "rake routes"
 
