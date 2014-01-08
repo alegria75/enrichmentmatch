@@ -1,0 +1,59 @@
+<!-- if current_user is logged in, show the signup form -->
+<% if @current_user %>
+  <div class="container signup-form">
+  <%= render partial: 'signup_form'%>
+  </div>
+
+<!-- if current_user not logged in, show cool animation -->
+<% else %>
+
+<div class="container">
+
+  <div class="hero-unit">
+    <h1>Finding quality teachers for your enrichment program is 
+      <div class="rw-words rw-words-1">
+        <span>hard...</span>
+        <span>not very fun...</span>
+        <span>just plain sad...</span>
+      </div>
+    </h1>
+    <h1>Finding real enrichment jobs is 
+      <div class="rw-words rw-words-1">
+        <span>hard...</span>
+        <span>not very fun...</span>
+        <span>just plain sad...</span>
+      </div>
+    </h1>
+    <h2>Get matched today.</h2>
+  </div>
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item">
+        <%= image_tag("Lonely-Coder.svg", :alt => "Lonely Coder", :class => "splash-image") %>
+      </div>
+      <div class="item">
+        <%= image_tag("Coder-w-Buddy.svg", :alt => "Coder with Buddy", :class => "splash-image") %>
+      </div>
+    </div>
+  </div>
+  <div class="subheading">
+    <h3>Enter your zip code to find local teachers and schools.</h3>
+     <!--<div class="second-github-button">
+      <button class="btn" onclick="Hull.login('github')"><i class="fa fa-github fa-lg"></i> Log in with GitHub
+      </button>
+    </div> -->
+  </div>
+
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 4000
+    });
+  });
+</script>
+
+<% end %>

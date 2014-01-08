@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation, :remember_me, :zipcode
-  
+  belongs_to :subject
 
   # Enforces presence of zip- or post-code on signup form
   # validates_presence_of :zipcode, :on => :update

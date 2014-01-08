@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.top_rated.paginate(page: params[:page], per_page: 10)
+  end
+
+
   def show
     @id = params[:id] #@id is not a number but the login name
-    @user = User.find_by_login(params[:id])
-    if @user.nil?
-      record_not_found
-    end
+    @user = User.find(params[:id])
   end
 
   def new
